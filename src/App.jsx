@@ -1,5 +1,6 @@
 import './App.css'
 import Courses from './pages/Courses'
+import CoursesProfessor from './pages/CoursesProfessor'
 import Login from './pages/Login'
 import Members from './pages/Members'
 import Profile from './pages/Profile'
@@ -14,6 +15,7 @@ export default function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/courses' element={<Courses />} />
         <Route path='/members' element={<Members />} />
+        <Route path='/coursesProfessor' element={<CoursesProfessor />} />
       </Routes>
     </div>
   )

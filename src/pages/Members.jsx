@@ -32,11 +32,11 @@ export default function Members() {
     })
 
     useEffect(() => {
-        axios.get('http://localhost:8888/grading-management-system/api/students').then(res => {
+        axios.get('http://localhost/grading-management-system/api/students').then(res => {
             setStudents(res.data)
         })
 
-        axios.get('http://localhost:8888/grading-management-system/api/professors').then(res => {
+        axios.get('http://localhost/grading-management-system/api/professors').then(res => {
             setTeachers(res.data)
         })
     }, [])
@@ -44,7 +44,7 @@ export default function Members() {
 
     const handleAddMember = () => {
         if(newMemberData.role === 'student') {
-            axios.post('http://localhost:8888/grading-management-system/api/students', {
+            axios.post('http://localhost/grading-management-system/api/students', {
                 firstName: newMemberData.firstName,
                 lastName: newMemberData.lastName,
                 email: newMemberData.email,
@@ -53,7 +53,7 @@ export default function Members() {
                 setStudents([...students, res.data])
             })
         } else if(newMemberData.role === 'teacher') {
-            axios.post('http://localhost:8888/grading-management-system/api/professors', {
+            axios.post('http://localhost/grading-management-system/api/professors', {
                 firstName: newMemberData.firstName,
                 lastName: newMemberData.lastName,
                 email: newMemberData.email,
@@ -66,19 +66,21 @@ export default function Members() {
 
     const handleDeleteMember = (id, role) => {
         if(role === 'student') {
-            axios.delete(`http://localhost:8888/grading-management-system/api/students/${id}`).then(res => {
+            axios.delete(`http://localhost/grading-management-system/api/students/${id}`).then(res => {
                 setStudents(students.filter(student => student.id !== id))
+                window.alert(`Successsfuly deleted ${student.firstName}`)
             })
         } else {
-            axios.delete(`http://localhost:8888/grading-management-system/api/professors/${id}`).then(res => {
+            axios.delete(`http://localhost/grading-management-system/api/professors/${id}`).then(res => {
                 setTeachers(teachers.filter(teacher => teacher.id !== id))
+                
             })
         }
     }
 
     const handleEditMember = () => {
         if(newMemberData.role === 'student') {
-            axios.put(`http://localhost:8888/grading-management-system/api/students/${newMemberData.id}`, {
+            axios.put(`http://localhost/grading-management-system/api/students/${newMemberData.id}`, {
                 firstName: newMemberData.firstName,
                 lastName: newMemberData.lastName,
                 email: newMemberData.email,
@@ -93,7 +95,7 @@ export default function Members() {
                 }))
             })
         } else {
-            axios.put(`http://localhost:8888/grading-management-system/api/professors/${newMemberData.id}`, {
+            axios.put(`http://localhost/grading-management-system/api/professors/${newMemberData.id}`, {
                 firstName: newMemberData.firstName,
                 lastName: newMemberData.lastName,
                 email: newMemberData.email,

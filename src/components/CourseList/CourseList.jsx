@@ -38,13 +38,13 @@ export default function CourseList(props) {
         setCourses(props.courses)
         setTeachers(props.teachers)
 
-        axios.get('http://localhost:8888/grading-management-system/api/students').then(res => {
+        axios.get('http://localhost/grading-management-system/api/students').then(res => {
             setStudents(res.data)
         })
     }, [props.courses, props.teachers])
 
     useEffect(() => {
-        axios.get(`http://localhost:8888/grading-management-system/api/courses/${courseData.id}/students`).then(res => {
+        axios.get(`http://localhost/grading-management-system/api/courses/${courseData.id}/students`).then(res => {
             setEnrolledStudents(res.data)
             console.log(res.data)
         })
@@ -52,21 +52,21 @@ export default function CourseList(props) {
 
 
     const handleEditCourse = () => {
-        axios.put(`http://localhost:8888/grading-management-system/api/courses/${courseData.id}`, courseData).then(res => {
+        axios.put(`http://localhost/grading-management-system/api/courses/${courseData.id}`, courseData).then(res => {
             setCourses(courses.map(course => course.id === res.data.id ? res.data : course))
         })
         window.location.reload()
     }
 
     const handleDeleteCourse = () => {
-        axios.delete(`http://localhost:8888/grading-management-system/api/courses/${courseData.id}`).then(res => {
+        axios.delete(`http://localhost/grading-management-system/api/courses/${courseData.id}`).then(res => {
             setCourses(courses.filter(course => course.id !== res.data.id))
         })
         window.location.reload()
     }
 
     const handleEnrollment = () => {
-        axios.post(`http://localhost:8888/grading-management-system/api/enrollments`, {
+        axios.post(`http://localhost/grading-management-system/api/enrollments`, {
             student_id: selectedStudentId,
             course_id: courseData.id
         }).then(res => {
@@ -76,7 +76,7 @@ export default function CourseList(props) {
     }
 
     const handleRemoveStudent = (studentId) => {
-        axios.delete(`http://localhost:8888/grading-management-system/api/enrollments/${studentId}`).then(res => {
+        axios.delete(`http://localhost/grading-management-system/api/enrollments/${studentId}`).then(res => {
             setOpen(false)
         })
     }

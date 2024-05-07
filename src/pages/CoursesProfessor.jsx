@@ -15,8 +15,9 @@ import Select from '@mui/joy/Select';
 import Option from '@mui/joy/Option';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import CourseListProfessor from "../components/CourseListProfessor/CourseListProfessor";
 
-export default function Courses() {
+export default function CoursesProfessor() {
     const [open, setOpen] = useState(false)
     const [courses, setCourses] = useState([])
     const [teachers, setTeachers] = useState([])
@@ -25,7 +26,8 @@ export default function Courses() {
         courseCode: '',
         description: '',
         ects: '',
-        professor_id: ''
+        professor_id: '',
+        
     })
 
     useEffect(() => {
@@ -50,8 +52,8 @@ export default function Courses() {
         <div className="main">
             <NavBar />
             <div className="courses-section">
-                <Button onClick={() => setOpen(true)} sx={{margin: '10px'}} startDecorator={<AddIcon />} variant='solid' color='primary'>Add Course</Button>
-                <CourseList courses={courses} teachers={teachers} />
+                <h1>Courses</h1>
+                <CourseListProfessor courses={courses} teachers={teachers} />
             </div>
             <Modal open={open} onClose={() => setOpen(false)}>
                 <ModalDialog>
