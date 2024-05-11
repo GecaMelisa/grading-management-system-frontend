@@ -38,6 +38,8 @@ export default function CourseList(props) {
         setCourses(props.courses)
         setTeachers(props.teachers)
 
+        
+
         axios.get('http://localhost/grading-management-system/api/students').then(res => {
             setStudents(res.data)
         })
