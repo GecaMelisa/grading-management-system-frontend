@@ -12,21 +12,10 @@ export default function CoursesStudent() {
 
     const studentIdFromLocalStorage = localStorage.getItem("userId");
     console.log(studentIdFromLocalStorage)
-
-    /*useEffect(() => {
-        const studentIdFromLocalStorage = localStorage.getItem("userId");
-        if (studentIdFromLocalStorage) {
-            setStudentId(studentIdFromLocalStorage);
-        }
-    }, []);*/
-
-  
+ 
     useEffect(() => {
-        // Dobivanje studentID iz localStorage-a
-        //const studentIdFromLocalStorage = localStorage.getItem("studentId");
-        
         if (studentIdFromLocalStorage) {
-            console.log("Student ID from localStorage:", studentIdFromLocalStorage); // Dodajte ovu liniju
+            console.log("Student ID from localStorage:", studentIdFromLocalStorage); 
 
             axios.get(`http://localhost/grading-management-system/api/studentcourses/${studentIdFromLocalStorage}`)
                 .then(res => {

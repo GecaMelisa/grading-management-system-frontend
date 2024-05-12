@@ -92,8 +92,8 @@ export default function CourseList(props) {
                             <div onClick={() => {
                                 setOpen(true)
                                 setCourseData(course)
-                                }} key={course.id} className="course-card">
-                                <span className='course-code'>{course.courseCode}</span>
+                            }} key={course.id} className="course-card" style={{ color: 'black' }}>
+                            <span className='course-code'>{course.courseCode}</span>
                                 <span className='course-code'>{course.ects} ECTS</span>
                                 <p className='course-title'>{course.title}</p>
                             </div>
