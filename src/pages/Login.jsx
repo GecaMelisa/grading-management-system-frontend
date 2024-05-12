@@ -48,7 +48,13 @@ const Login = () => {
             console.log(data)
 
             // Redirekcija na željenu rutu
-            window.location.href = '/courses';
+            if(data.role==='student'){
+                window.location.href = '/coursesStudent';
+            }
+            else{
+                window.location.href = '/courses';
+            }
+            
 
         } catch (error) {
             setError(error.message);
