@@ -30,8 +30,10 @@ export default function CoursesProfessor() {
         
     })
 
+    const studentIdFromLocalStorage = localStorage.getItem("userId");
+    console.log(studentIdFromLocalStorage)
     useEffect(() => {
-        axios.get('http://localhost/grading-management-system/api/courses').then(res => {
+        axios.get(`http://localhost/grading-management-system/api/courses/professor/${studentIdFromLocalStorage}`).then(res => {
             setCourses(res.data)
         })
     }, [])
