@@ -68,17 +68,24 @@ const Login = () => {
                 <form onSubmit={handleSubmit}>
                     {error && <div className="error-message">{error}</div>}
                     <div className="form-block__input-wrapper">
-                        <div className={`form-group form-group--${mode}`}>
+                        <div className={`form-group form-group--${mode}`} style={{display:'grid', gap:'10px'}}>
                             {mode === 'login' ? (
                                 <>
+                                <div>
+                                    
+                                </div>
+                                    <label htmlFor="">Email</label>
                                     <input
+                                        style={{height:'30px'}}
                                         type="email"
                                         id="email"
                                         placeholder="Email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
+                                    <label htmlFor="">Passowrd</label>
                                     <input
+                                         style={{height:'30px'}}
                                         type="password"
                                         id="password"
                                         placeholder="Password"
