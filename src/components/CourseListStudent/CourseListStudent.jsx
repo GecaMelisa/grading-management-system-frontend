@@ -18,7 +18,7 @@ export default function CourseListStudent(props) {
     const [grades, setGrades] = useState([]);
 
     useEffect(() => {
-        const studentIdFromLocalStorage = localStorage.getItem("studentId");
+        const studentIdFromLocalStorage = localStorage.getItem("userId");
         
         if (studentIdFromLocalStorage) {
             console.log("Student ID from localStorage:", studentIdFromLocalStorage); // Dodajte ovu liniju
