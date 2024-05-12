@@ -29,6 +29,7 @@ const Login = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ email, password }),
+            
             });
 
             if (!response.ok) {
@@ -36,11 +37,19 @@ const Login = () => {
                 throw new Error(errorMessage);
             }
 
+            const data = await response.json();
+
+        
+            localStorage.setItem('userId', data.id);
+            localStorage.setItem('role', data.role);
+
             // Uspješna prijava
             console.log('Login successful');
+            console.log(data)
 
             // Redirekcija na željenu rutu
             window.location.href = '/courses';
+
         } catch (error) {
             setError(error.message);
         }
