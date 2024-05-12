@@ -221,7 +221,7 @@ export default function CourseListProfessor(props) {
                             <div onClick={() => {
                                 setOpen(true)
                                 setCourseData(course)
-                            }} key={course.id} className="course-card">
+                            }} key={course.id} className="course-card" style={{ color: 'black' }}>
 
                                 <span className='course-code'>{course.courseCode}</span>
                                 <span className='course-code'>{course.ects} ECTS</span>

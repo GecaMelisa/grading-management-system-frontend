@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './login.scss'; // Uvozimo stilove
+import './login.scss';
 
 const Login = () => {
     const [mode, setMode] = useState('login');
@@ -62,9 +62,7 @@ const Login = () => {
                 <header className="form-block__header">
                     <h1>{mode === 'login' ? 'Welcome' : 'Sign up'}</h1>
                     <div className="form-block__toggle-block">
-                        {/*} <span>{mode === 'login' ? 'Don\'t' : 'Already'} have an account? Click here &#8594;</span>
-                        <input id="form-toggler" type="checkbox" onClick={toggleMode} />
-                        <label htmlFor="form-toggler"></label>*/}
+                        
                     </div>
                 </header>
                 <form onSubmit={handleSubmit}>
