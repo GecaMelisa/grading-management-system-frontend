@@ -81,8 +81,8 @@ export default function Profile() {
 
     const handleChangePasswrod = () => {
         if (window.confirm('Are you sure you want to update your password?')) {
-            const endpoint = newMemberData.role === 'student'
-                ? `http://localhost/grading-management-system/api/students/${userId}`
+            const endpoint = role === 'student'
+                ? `http://localhost/grading-management-system/api/students/changePassword/${userId}`
                 : `http://localhost/grading-management-system/api/professors/changePassword/${userId}`;
     
                 axios.post(endpoint, {
