@@ -1,0 +1,32 @@
+.about-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+    background-color: #e0f7fa; /* Svetlo plava boja pozadine */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-heading {
+    text-align: center;
+    font-size: 2em;
+    color: #004d40; /* Tamno zelena boja za naslove */
+    margin-bottom: 20px;
+  }
+  
+  .about-paragraph {
+    text-align: justify;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #004d40; /* Tamno zelena boja za tekst */
+  }
+  
+  /* Dodatni stilovi za specifične delove */
+  .about-content {
+    margin-top: 20px; /* Prilagodi razmak između sadržaja */
+  }
+  
+  .about-mission {
+    margin-top: 20px; /* Prilagodi razmak između misije */
+  }
+  

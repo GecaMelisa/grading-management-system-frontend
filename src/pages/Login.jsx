@@ -43,10 +43,10 @@ const Login = () => {
             localStorage.setItem('userId', data.id);
             localStorage.setItem('role', data.role);
 
-            // Uspješna prijava
             console.log('Login successful');
             console.log(data)
 
+<<<<<<< Updated upstream
             // Redirekcija na željenu rutu
             if(data.role==='student'){
                 window.location.href = '/coursesStudent';
@@ -55,6 +55,15 @@ const Login = () => {
                 window.location.href = '/courses';
             }
         } catch (error) {
+=======
+            // Redirect based on role
+            if (data.role === 'student') {
+                window.location.href = '/coursesStudent';
+            } else {
+                window.location.href = '/courses';
+            }
+         } catch (error) {
+>>>>>>> Stashed changes
             setError(error.message);
         }
     };

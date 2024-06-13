@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Members from './pages/Members'
 import Profile from './pages/Profile'
 import CoursesStudent from './pages/CoursesStudent'
+import About from './pages/About'
 import { Route, Routes } from 'react-router-dom'
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
         <Route path='/coursesProfessor' element={<CoursesProfessor />} />
         <Route path='/login' element={<Login />} />
         <Route path='/coursesStudent' element={<CoursesStudent />} />
+        <Route path='/about' element={<About />} />
         <Route path="/*" element={<h1>Page Not Found</h1>}/>
       </Routes>
     </div>
