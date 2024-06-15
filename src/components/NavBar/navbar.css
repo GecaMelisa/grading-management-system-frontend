@@ -1,24 +1,33 @@
 .navbar {
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   height: 100vh;
   width: 320px;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  position: fixed; 
+  left: 0; 
+  top: 0; 
+  z-index: 1000; 
 }
+
 @media screen and (max-width: 1023px) {
   .navbar {
     width: 100px;
     padding: 10px;
   }
 }
+
 .navbar a {
   margin-top: 10px;
+  text-decoration: none;
+  color: #004d99;
 }
+
 .navbar .user-info {
   margin-top: auto;
   color: rgb(56, 85, 135);
   font-size: 18px;
   text-align: center;
-}/*# sourceMappingURL=navbar.css.map */
+}

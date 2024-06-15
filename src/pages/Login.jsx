@@ -46,16 +46,6 @@ const Login = () => {
             console.log('Login successful');
             console.log(data)
 
-<<<<<<< Updated upstream
-            // Redirekcija na željenu rutu
-            if(data.role==='student'){
-                window.location.href = '/coursesStudent';
-            }
-            else{
-                window.location.href = '/courses';
-            }
-        } catch (error) {
-=======
             // Redirect based on role
             if (data.role === 'student') {
                 window.location.href = '/coursesStudent';
@@ -63,7 +53,6 @@ const Login = () => {
                 window.location.href = '/courses';
             }
          } catch (error) {
->>>>>>> Stashed changes
             setError(error.message);
         }
     };
