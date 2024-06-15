@@ -5,6 +5,8 @@ import './navbar.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+
 const NavBar = () => {
     const handleLogout = () => {
         localStorage.removeItem('userId');

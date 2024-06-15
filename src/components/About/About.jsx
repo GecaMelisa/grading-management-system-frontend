@@ -4,9 +4,9 @@ import NavBar from '../NavBar/NavBar';
 
 const About = () => {
   return (
-    <div>
+    <div className='main'>
       <NavBar />   
-      <div className="main-content">
+     
         <div className="about-container">
           <div className="about-content">
             <h1 className="about-title">About Our Grading Management System</h1>
@@ -27,7 +27,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 
