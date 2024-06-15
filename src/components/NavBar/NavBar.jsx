@@ -5,6 +5,8 @@ import './navbar.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+
 const NavBar = () => {
     const handleLogout = () => {
         localStorage.removeItem('userId');
@@ -62,6 +64,7 @@ const NavBar = () => {
                     <Link to='/courses'><Button sx={{ width: '100%' }} variant='solid' color='primary'>Courses</Button></Link>
                     <Link to='/members'><Button sx={{ width: '100%' }} variant='solid' color='primary'>Members</Button></Link>
                     <Link to='/profile'><Button sx={{ width: '100%' }} variant='solid' color='primary'>My Profile</Button></Link>
+                    <Link to='/about'><Button sx={{ width: '100%' }} variant='solid' color='primary'>About</Button></Link>
                 </>
             )}
 
@@ -70,6 +73,7 @@ const NavBar = () => {
                    
                     <Link to='/coursesProfessor'><Button sx={{ width: '100%' }} variant='solid' color='primary'>Courses</Button></Link>
                     <Link to='/profile'><Button sx={{ width: '100%' }} variant='solid' color='primary'>My Profile</Button></Link>
+                    <Link to='/about'><Button sx={{ width: '100%' }} variant='solid' color='primary'>About</Button></Link>
                 </>
             )}
 
@@ -77,12 +81,11 @@ const NavBar = () => {
                 <>
                     <Link to='/coursesStudent'><Button sx={{ width: '100%' }} variant='solid' color='primary'>My Courses</Button></Link>
                     <Link to='/profile'><Button sx={{ width: '100%' }} variant='solid' color='primary'>My Profile</Button></Link>
+                    <Link to='/about'><Button sx={{ width: '100%' }} variant='solid' color='primary'>About</Button></Link>
                 </>
 
 
             )}
-
-
 
             <div className='user-info'>
                 <i className="fa-light fa-user"></i>
