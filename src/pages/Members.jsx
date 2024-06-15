@@ -27,8 +27,8 @@ export default function Members() {
         firstName: '',
         lastName: '',
         email: '',
-        password: '',
-        role: ''
+        isAdmin:'0',
+       
     })
 
     useEffect(() => {
@@ -58,6 +58,16 @@ export default function Members() {
                 lastName: newMemberData.lastName,
                 email: newMemberData.email,
                 password: newMemberData.password
+            }).then(res => {
+                setTeachers([...teachers, res.data])
+            })
+        } else if(newMemberData.role === 'admin') {
+            axios.post('http://localhost/grading-management-system/api/professors', {
+                firstName: newMemberData.firstName,
+                lastName: newMemberData.lastName,
+                email: newMemberData.email,
+                password: newMemberData.password,
+                isAdmin:"1"
             }).then(res => {
                 setTeachers([...teachers, res.data])
             })
@@ -216,6 +226,7 @@ export default function Members() {
                             <Select onChange={(e, v) => setNewMemberData({...newMemberData, role: v})}>
                                 <Option value="teacher">Teacher</Option>
                                 <Option value="student">Student</Option>
+                                <Option value="admin">Admin</Option>
                             </Select>
                         </FormControl>
                         <Button type="submit">Create</Button>
