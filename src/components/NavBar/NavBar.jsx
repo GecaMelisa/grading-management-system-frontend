@@ -63,7 +63,6 @@ const NavBar = () => {
                     <Link to='/members'><Button sx={{ width: '100%' }} variant='solid' color='primary'>Members</Button></Link>
                     <Link to='/profile'><Button sx={{ width: '100%' }} variant='solid' color='primary'>My Profile</Button></Link>
                     <Link to='/about'><Button sx={{ width: '100%' }} variant='solid' color='primary'>About</Button></Link>
-
                 </>
             )}
 
