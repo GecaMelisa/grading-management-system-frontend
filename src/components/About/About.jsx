@@ -4,9 +4,9 @@ import NavBar from '../NavBar/NavBar';
 
 const About = () => {
   return (
-    <div className='main'>
-      <NavBar />   
-     
+    <div className='layout-container'>
+      <NavBar className='navbar' /> {/* Dodajemo klasu za stilizaciju */}
+      <div className="main-content">
         <div className="about-container">
           <div className="about-content">
             <h1 className="about-title">About Our Grading Management System</h1>
@@ -17,8 +17,8 @@ const About = () => {
               The system offers real-time updates, comprehensive reports, and an intuitive dashboard that simplifies grade management tasks. Our goal is to enhance the educational experience for both educators and students through technology.
             </p>
             <div className="administration-section">
-            <p>For more details, please contact our Administration team.</p>
-            <ul>
+              <p>For more details, please contact our Administration team.</p>
+              <ul>
                 <li>Melisa Geca</li>
                 <li>Tarik Maljanović</li>
                 <li>Kerim Šabić</li>
@@ -27,7 +27,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    
+    </div>
   );
 };
 
