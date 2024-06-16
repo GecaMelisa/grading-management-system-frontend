@@ -22,7 +22,7 @@ const NavBar = () => {
     useEffect(() => {
         // const studentIdFromLocalStorage = localStorage.getItem("userId");
         if (role == "professor" && userId) {
-            axios.get(`http://localhost/grading-management-system/api/professors/${userId}`)
+            axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/professors/${userId}`)
                 .then(res => {
                     setUser(res.data);
                 })
@@ -31,7 +31,7 @@ const NavBar = () => {
                 });
         }
         else if (role == "admin") {
-            axios.get(`http://localhost/grading-management-system/api/professors/${userId}`)
+            axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/professors/${userId}`)
                 .then(res => {
                     setUser(res.data);
                 })
@@ -40,7 +40,7 @@ const NavBar = () => {
                 });
         }
         else if (role == "student") {
-            axios.get(`http://localhost/grading-management-system/api/students/${userId}`)
+            axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/students/${userId}`)
                 .then(res => {
                     setUser(res.data);
                 })

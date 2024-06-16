@@ -41,7 +41,7 @@ export default function Profile() {
 
     useEffect(() => {
         if ((role === "professor" && userId) || role==="admin") {
-            axios.get(`http://localhost/grading-management-system/api/professors/${userId}`)
+            axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/professors/${userId}`)
                 .then(res => {
                     setNewMemberData(res.data);
                 })
@@ -49,7 +49,7 @@ export default function Profile() {
                     console.error('Error fetching professor data:', error);
                 });
         } else if (role === "student") {
-            axios.get(`http://localhost/grading-management-system/api/students/${userId}`)
+            axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/students/${userId}`)
                 .then(res => {
                     setNewMemberData(res.data);
                 })
@@ -62,8 +62,8 @@ export default function Profile() {
     const handleEditMember = () => {
         if (window.confirm('Are you sure you want to update your information?')) {
             const endpoint = newMemberData.role === 'student'
-                ? `http://localhost/grading-management-system/api/students/${newMemberData.id}`
-                : `http://localhost/grading-management-system/api/professors/${newMemberData.id}`;
+                ? `https://king-prawn-app-66oof.ondigitalocean.app/api/students/${newMemberData.id}`
+                : `https://king-prawn-app-66oof.ondigitalocean.app/api/professors/${newMemberData.id}`;
 
             axios.put(endpoint, {
                 firstName: newMemberData.firstName,
@@ -82,8 +82,8 @@ export default function Profile() {
     const handleChangePasswrod = () => {
         if (window.confirm('Are you sure you want to update your password?')) {
             const endpoint = role === 'student'
-                ? `http://localhost/grading-management-system/api/students/changePassword/${userId}`
-                : `http://localhost/grading-management-system/api/professors/changePassword/${userId}`;
+                ? `https://king-prawn-app-66oof.ondigitalocean.app/api/students/changePassword/${userId}`
+                : `https://king-prawn-app-66oof.ondigitalocean.app/api/professors/changePassword/${userId}`;
     
                 axios.post(endpoint, {
                     password: passwordData.password,

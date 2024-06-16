@@ -17,7 +17,7 @@ export default function CoursesStudent() {
         if (studentIdFromLocalStorage) {
             console.log("Student ID from localStorage:", studentIdFromLocalStorage); 
 
-            axios.get(`http://localhost/grading-management-system/api/studentcourses/${studentIdFromLocalStorage}`)
+            axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/studentcourses/${studentIdFromLocalStorage}`)
                 .then(res => {
                     setCourses(res.data);
                 })

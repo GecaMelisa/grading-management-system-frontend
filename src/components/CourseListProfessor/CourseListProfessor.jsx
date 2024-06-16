@@ -61,20 +61,20 @@ export default function CourseListProfessor(props) {
         setCourses(props.courses)
         setTeachers(props.teachers)
 
-        axios.get('http://localhost/grading-management-system/api/students').then(res => {
+        axios.get('https://king-prawn-app-66oof.ondigitalocean.app/api/students').then(res => {
             setStudents(res.data)
         })
     }, [props.courses, props.teachers])
 
     useEffect(() => {
-        axios.get(`http://localhost/grading-management-system/api/courses/${courseData.id}/students`).then(res => {
+        axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/courses/${courseData.id}/students`).then(res => {
             setEnrolledStudents(res.data)
 
         })
     }, [open])
 
     useEffect(() => {
-        axios.get(`http://localhost/grading-management-system/api/courses/${courseData.id}/assignments`).then(res => {
+        axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/courses/${courseData.id}/assignments`).then(res => {
             setAssignments(res.data)
         })
 
@@ -82,7 +82,7 @@ export default function CourseListProfessor(props) {
 
 
     useEffect(() => {
-        axios.get(`http://localhost/grading-management-system/api/courses/${courseData.id}/students`).then(res => {
+        axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/courses/${courseData.id}/students`).then(res => {
             setEnrolledStudents(res.data)
             console.log(res.data)
         })
@@ -91,7 +91,7 @@ export default function CourseListProfessor(props) {
 
     useEffect(() => {
         if (openEditAssignmetn) {
-            axios.get(`http://localhost/grading-management-system/api/assignmentGrades/${courseData.id}/${assignmentData.id}`).then(res => {
+            axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/assignmentGrades/${courseData.id}/${assignmentData.id}`).then(res => {
                 setAssignmetnGarde(res.data)
 
             })
@@ -99,7 +99,7 @@ export default function CourseListProfessor(props) {
     }, [open, courseData.id, assignmentData.id, openGradeStudent])
 
     const handleEnrollment = () => {
-        axios.post(`http://localhost/grading-management-system/api/enrollments`, {
+        axios.post(`https://king-prawn-app-66oof.ondigitalocean.app/api/enrollments`, {
             student_id: selectedStudentId,
             course_id: courseData.id
         }).then(res => {
@@ -110,7 +110,7 @@ export default function CourseListProfessor(props) {
     }
 
     const handleRemoveStudent = (studentId) => {
-        axios.delete(`http://localhost/grading-management-system/api/enrollments/${studentId}`).then(res => {
+        axios.delete(`https://king-prawn-app-66oof.ondigitalocean.app/api/enrollments/${studentId}`).then(res => {
             setOpen(false)
             //(true)
         })
@@ -120,7 +120,7 @@ export default function CourseListProfessor(props) {
 
 
     const handleGetGradeStudent = (studentId) => {
-        axios.get(`http://localhost/grading-management-system/api/assignmentGrades/${courseData.id}/${assignmentData.id}/${studentId}`,).then(res => {
+        axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/assignmentGrades/${courseData.id}/${assignmentData.id}/${studentId}`,).then(res => {
             console.log(`this is the grade data above ${res.data[0].grade}`)
             console.log(`this is the assignment id ${res.data[0].assignmentId}`)
             console.log(`this is the student id ${res.data[0].studentId}`)
@@ -140,7 +140,7 @@ export default function CourseListProfessor(props) {
 
     const handleGradeStudent = (studentId, assignmentId, gradeId) => {
         if (gradeData.gradeId === null) {
-            axios.post(`http://localhost/grading-management-system/api/grades`, {
+            axios.post(`https://king-prawn-app-66oof.ondigitalocean.app/api/grades`, {
                 grade: gradeData.grade,
                 student_id: studentId,
                 assignment_id: assignmentId,
@@ -153,7 +153,7 @@ export default function CourseListProfessor(props) {
                     console.error('Error creating grade:', error);
                 });
         } else {
-            axios.put(`http://localhost/grading-management-system/api/grades/${gradeId}`, {
+            axios.put(`https://king-prawn-app-66oof.ondigitalocean.app/api/grades/${gradeId}`, {
                 id: gradeId,
                 grade: gradeData.grade,
                 student_id: studentId,
@@ -171,7 +171,7 @@ export default function CourseListProfessor(props) {
     }
 
     const handleEditAssignment = (id) => {
-        axios.get(`http://localhost/grading-management-system/api/assignments/${id}`,).then(res => {
+        axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/assignments/${id}`,).then(res => {
             console.log(res.data);
             const assignment = res.data;
             setAssignmetnData({
@@ -185,7 +185,7 @@ export default function CourseListProfessor(props) {
     }
 
     const handleSubmitEditAssignment = () => {
-        axios.put(`http://localhost/grading-management-system/api/assignments/${assignmentData.id}`, {
+        axios.put(`https://king-prawn-app-66oof.ondigitalocean.app/api/assignments/${assignmentData.id}`, {
             title: assignmentData.title,
             weight: assignmentData.weight
         })
@@ -199,7 +199,7 @@ export default function CourseListProfessor(props) {
 
 
     const handleAddAssignment = () => {
-        axios.post(`http://localhost/grading-management-system/api/assignments`, {
+        axios.post(`https://king-prawn-app-66oof.ondigitalocean.app/api/assignments`, {
             course_id: courseData.id,
             title: assignmentData.title,
             weight: assignmentData.weight

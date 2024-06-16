@@ -21,7 +21,7 @@ export default function CourseListStudent(props) {
         const studentIdFromLocalStorage = localStorage.getItem("userId");
         
         if (studentIdFromLocalStorage) {
-            axios.get(`http://localhost/grading-management-system/api/studentcourses/${studentIdFromLocalStorage}`)
+            axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/studentcourses/${studentIdFromLocalStorage}`)
                 .then(res => {
                     setCourses(res.data);
                 })
@@ -33,7 +33,7 @@ export default function CourseListStudent(props) {
 
     const handleCourseClick = (courseId) => {
         setSelectedCourse(courseId);
-        axios.get(`http://localhost/grading-management-system/api/courses/${courseId}/assignments`)
+        axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/courses/${courseId}/assignments`)
             .then(res => {
                 setAssignments(res.data);
             })
@@ -46,7 +46,7 @@ export default function CourseListStudent(props) {
     //Prikazuje ocjene iz assignment-a kad se klikne na ime assignment-a, treba promijeniti
     const handleAssignmentClick = (assignmentId) => {
             const studentIdFromLocalStorage = localStorage.getItem("userId");
-            axios.get(`http://localhost/grading-management-system/api/assignmentGrades/${selectedCourse.id}/${assignmentId}/${studentIdFromLocalStorage}`)
+            axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/assignmentGrades/${selectedCourse.id}/${assignmentId}/${studentIdFromLocalStorage}`)
                 .then(res => {
                     setGrades(res.data);
                 })
@@ -146,7 +146,7 @@ export default function CourseListStudent(props) {
         const studentIdFromLocalStorage = localStorage.getItem("userId");
 
         if (studentIdFromLocalStorage) {
-            axios.get(`http://localhost/grading-management-system/api/studentcourses/${studentIdFromLocalStorage}`)
+            axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/studentcourses/${studentIdFromLocalStorage}`)
                 .then(res => {
                     setCourses(res.data);
                 })
@@ -160,7 +160,7 @@ export default function CourseListStudent(props) {
         const studentIdFromLocalStorage = localStorage.getItem("userId");
 
         setSelectedCourse(courseId);
-        axios.get(`http://localhost/grading-management-system/api/courseAssignmentsGrades/${courseId}/${studentIdFromLocalStorage}`) //ovaj endpoint vraća null - treba se popraviti
+        axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/courseAssignmentsGrades/${courseId}/${studentIdFromLocalStorage}`) //ovaj endpoint vraća null - treba se popraviti
             .then(res => {
                 setAssignmentsWithGrades(res.data);
                 console.log(res.data)

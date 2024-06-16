@@ -23,7 +23,7 @@ const Login = () => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost/grading-management-system/login', {
+            const response = await fetch('https://king-prawn-app-66oof.ondigitalocean.app/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -33,19 +33,19 @@ export default function CoursesProfessor() {
     const professorId = localStorage.getItem("userId");
     console.log(professorId)
     useEffect(() => {
-        axios.get(`http://localhost/grading-management-system/api/courses/professor/${professorId}`).then(res => {
+        axios.get(`https://king-prawn-app-66oof.ondigitalocean.app/api/courses/professor/${professorId}`).then(res => {
             setCourses(res.data)
         })
     }, [])
 
     useEffect(() => {
-        axios.get('http://localhost/grading-management-system/api/professors').then(res => {
+        axios.get('https://king-prawn-app-66oof.ondigitalocean.app/api/professors').then(res => {
             setTeachers(res.data)
         })
     }, [])
 
     const handleAddCourse = () => {
-        axios.post('http://localhost/grading-management-system/api/courses', courseData).then(res => {
+        axios.post('https://king-prawn-app-66oof.ondigitalocean.app/api/courses', courseData).then(res => {
             setCourses([...courses, res.data])
         })
     }
