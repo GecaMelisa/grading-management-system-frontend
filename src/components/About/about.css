@@ -10,10 +10,9 @@
     align-items: center;
     background: linear-gradient(135deg, #4880b8, #80d4ff); 
     color: #fff;
-    padding: 20px; /* Unutrašnje margine za glavni sadržaj */
+    padding: 20px;
   }
   
-  /* Stilizacija za about-container */
   .about-container {
     width: 80%; 
     max-width: 800px; 
